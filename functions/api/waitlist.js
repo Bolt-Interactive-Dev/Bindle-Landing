@@ -76,9 +76,9 @@ export async function onRequestPost(Context) {
     await Environment.EMAIL.send({
       to: EmailAddress,
       from: Environment.WAITLIST_FROM_EMAIL,
-      subject: 'Confirm your Tether waitlist spot',
-      text: `Confirm your Tether waitlist spot: ${ConfirmationUrl.toString()}`,
-      html: `<p>Confirm your Tether waitlist spot:</p><p><a href="${ConfirmationUrl.toString()}">Confirm my spot</a></p>`,
+      subject: 'Confirm your Bindle waitlist spot',
+      text: `Confirm your Bindle waitlist spot: ${ConfirmationUrl.toString()}`,
+      html: `<p>Confirm your Bindle waitlist spot:</p><p><a href="${ConfirmationUrl.toString()}">Confirm my spot</a></p>`,
     });
 
   } catch (Error) {

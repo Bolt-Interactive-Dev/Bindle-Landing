@@ -250,13 +250,13 @@ if (scanningLabel) {
 /* ════════════════════════════════════════
    Cloudflare waitlist
 ════════════════════════════════════════ */
-const WaitlistForm = document.querySelector('#tether-waitlist-form');
-const WaitlistStatus = document.querySelector('#tether-waitlist-status');
+const WaitlistForm = document.querySelector('#bindle-waitlist-form');
+const WaitlistStatus = document.querySelector('#bindle-waitlist-status');
 const WaitlistSubmitButton = WaitlistForm?.querySelector('button[type="submit"]');
 const WaitlistButtonLabel = WaitlistForm?.querySelector('.waitlist-button-label');
 const WaitlistLoader = WaitlistForm?.querySelector('.waitlist-loader');
-const TurnstileContainer = document.querySelector('#tether-turnstile');
-const TurnstileSiteKey = window.TetherWaitlistConfig?.turnstileSiteKey;
+const TurnstileContainer = document.querySelector('#bindle-turnstile');
+const TurnstileSiteKey = window.BindleWaitlistConfig?.turnstileSiteKey;
 
 let TurnstileWidgetId = null;
 

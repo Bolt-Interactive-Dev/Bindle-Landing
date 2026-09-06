@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Bindle</title>
+  <meta name="description" content="Bindle's privacy policy for the iOS app: what we collect, why, where your memories actually live, and how to delete your data." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../img/favicon-180.png" />
+  <style>
+
+    /* ── Privacy page layout (mirrors the site's own /privacy.html) ── */
+    .privacy-hero {
+      background: var(--dark);
+      padding: 10rem 2rem 5rem;
+      text-align: center;
+    }
+
+    .privacy-hero .eyebrow {
+      color: var(--accent);
+      font-family: var(--sans);
+      font-size: .72rem;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    .privacy-hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(2.4rem, 6vw, 4rem);
+      font-weight: 400;
+      color: var(--text-light);
+      line-height: 1.15;
+      margin-bottom: 1.2rem;
+    }
+
+    .privacy-hero .subtitle {
+      font-family: var(--sans);
+      font-size: 1rem;
+      color: var(--text-dim);
+      max-width: 480px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    .privacy-hero .updated {
+      margin-top: 1.8rem;
+      font-size: .78rem;
+      color: var(--text-muted);
+      letter-spacing: .04em;
+    }
+
+    /* ── Content area ── */
+    .privacy-body {
+      background: var(--cream);
+      padding: 5rem 2rem 7rem;
+    }
+
+    .privacy-container {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    /* ── Sections ── */
+    .privacy-section {
+      margin-bottom: 3.5rem;
+    }
+
+    .privacy-section h2 {
+      font-family: var(--serif);
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: var(--text-dark);
+      margin-bottom: 1rem;
+      padding-bottom: .75rem;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .privacy-section h3 {
+      font-family: var(--sans);
+      font-weight: 600;
+      font-size: .82rem;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      color: var(--accent-deep);
+      margin: 1.6rem 0 .7rem;
+    }
+
+    .privacy-section p {
+      font-family: var(--sans);
+      font-size: .97rem;
+      color: #4A3F38;
+      line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+
+    .privacy-section p:last-child {
+      margin-bottom: 0;
+    }
+
+    .privacy-section ul {
+      list-style: none;
+      padding: 0;
+      margin: .75rem 0 1rem;
+    }
+
+    .privacy-section ul li {
+      font-family: var(--sans);
+      font-size: .97rem;
+      color: #4A3F38;
+      line-height: 1.7;
+      padding: .4rem 0 .4rem 1.4rem;
+      position: relative;
+    }
+
+    .privacy-section ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: .9rem;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      opacity: .6;
+    }
+
+    .privacy-section li strong {
+      color: var(--text-dark);
+    }
+
+    /* ── Highlight box ── */
+    .privacy-callout {
+      background: #F0EBE3;
+      border-left: 3px solid var(--accent);
+      border-radius: 0 8px 8px 0;
+      padding: 1.1rem 1.4rem;
+      margin: 1.2rem 0;
+    }
+
+    .privacy-callout p {
+      margin: 0 !important;
+      font-size: .92rem !important;
+      color: #5A4A40 !important;
+    }
+
+    /* ── Contact block ── */
+    .privacy-contact {
+      background: var(--dark);
+      border-radius: 16px;
+      padding: 2.5rem;
+      text-align: center;
+      margin-top: 4rem;
+    }
+
+    .privacy-contact h2 {
+      font-family: var(--serif);
+      font-size: 1.6rem;
+      font-weight: 400;
+      color: var(--text-light);
+      margin-bottom: .7rem;
+      border: none;
+      padding: 0;
+    }
+
+    .privacy-contact p {
+      color: var(--text-dim);
+      font-size: .95rem;
+      line-height: 1.7;
+      margin-bottom: 1.4rem;
+    }
+
+    .privacy-contact a.contact-link {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      font-family: var(--sans);
+      font-size: .88rem;
+      font-weight: 500;
+      letter-spacing: .03em;
+      padding: .75rem 1.8rem;
+      border-radius: 100px;
+      transition: background .2s ease, transform .2s ease;
+    }
+
+    .privacy-contact a.contact-link:hover {
+      background: var(--accent-deep);
+      transform: translateY(-1px);
+    }
+
+    /* ── Footer tweaks on this page ── */
+    footer {
+      border-top: 1px solid var(--border-dark);
+    }
+
+  </style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════
+     NAV
+══════════════════════════════════════ -->
+<div class="top-scrim" aria-hidden="true"></div>
+
+<nav class="site-nav scrolled light-bg" style="background: rgba(247,244,239,0.85); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border-bottom-color: rgba(192,92,48,.1);">
+  <a class="nav-brand" href="../index.html">
+    <img class="nav-mark" src="../img/bindle-mark@2x.png" width="30" height="30" alt="" aria-hidden="true" />
+    <span class="nav-wordmark" style="color: var(--text-dark);">bindle</span>
+  </a>
+  <a href="../index.html#waitlist" class="btn-cta nav-cta"><svg class="waitlist-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 6h18v12H3z"/><path d="m3 7 9 6 9-6"/></svg>Join the waitlist</a>
+</nav>
+
+
+<!-- ══════════════════════════════════════
+     HERO
+══════════════════════════════════════ -->
+<section class="privacy-hero">
+  <p class="eyebrow">Legal</p>
+  <h1>Privacy Policy</h1>
+  <p class="subtitle">This is the privacy policy for the Bindle iOS app — what we collect, why, and where your memories actually live.</p>
+  <p class="updated">Last updated September 6, 2026</p>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     BODY
+══════════════════════════════════════ -->
+<div class="privacy-body">
+  <div class="privacy-container">
+
+    <div class="privacy-section">
+      <div class="privacy-callout">
+        <p>Your memories — the photos, videos, audio and documents you save — live in your own iCloud account, not on our servers. We store the account information needed to run the app (your name, email, and a small amount of usage data), and we never sell your data or show you ads.</p>
+      </div>
+    </div>
+
+    <div class="privacy-section">
+      <h2>Who we are</h2>
+      <p>Bindle is made by Bolt Interactive, LLC. This policy covers the Bindle app for iOS only. If you're looking for the policy covering our website, it's linked from the site's footer.</p>
+      <p>Questions about this policy or your data can go to <a href="mailto:support@heybindle.com" style="color: var(--accent); text-decoration: underline;">support@heybindle.com</a>.</p>
+    </div>
+
+    <div class="privacy-section">
+      <h2>Where your memories actually live</h2>
+      <p>The photos, videos, audio, and documents you save in Bindle — your actual memories — are stored in your own private iCloud account (Apple's CloudKit), not on Bindle's servers. We designed it this way deliberately: it's your data, and it should stay yours.</p>
+      <p>Because of this, Bindle's servers cannot see, access, or independently delete the contents of your memories. Only your own devices, signed into your own iCloud account, can do that. What Bindle's servers do hold is described below — account details, references needed to make sharing and sync work, and usage data — never the memory files themselves.</p>
+    </div>
+
+    <div class="privacy-section">
+      <h2>Information we collect</h2>
+
+      <h3>Account &amp; contact information</h3>
+      <ul>
+        <li><strong>Name</strong> — if you share it through Sign in with Apple, we store your display name against your account. It's shown to people you share a vault with, and on things you choose to export or print.</li>
+        <li><strong>Email address</strong> — provided through Sign in with Apple, stored on your account and used to send vault invitations you initiate and, where relevant, service communications about your account.</li>
+      </ul>
+
+      <h3>Identifiers</h3>
+      <ul>
+        <li><strong>Account ID</strong> — an internal identifier tied to your account, used to operate the app and attached to the usage-data events described below.</li>
+        <li><strong>Device ID</strong> — a private identifier generated on your device to recognize it as yours (for example, to manage cross-device sync). It is scoped to your own account and never used to identify or track you across other apps or websites.</li>
+        <li><strong>Push notification token</strong> — used only to deliver notifications to your device (for example, activity in a shared vault). Provided to us by Apple's push notification service.</li>
+      </ul>
+
+      <h3>The memories you create</h3>
+      <ul>
+        <li><strong>Photos and videos</strong> you save as memories.</li>
+        <li><strong>Audio recordings</strong> you save as memories.</li>
+        <li><strong>Documents and scans</strong> (for example PDFs) you save as memories.</li>
+      </ul>
+      <p>As explained above, these files themselves live in your own iCloud account. We hold only what's needed to sync and organize them across your devices and any vaults you share.</p>
+
+      <h3>Usage data</h3>
+      <p>We collect basic product-interaction events — for example that a memory was created, a paywall was viewed, or a vault was shared — to understand how the app is used and to fix problems. These events carry your account ID and simple descriptive details (like the type of memory or whether an upload succeeded), never the content, name, or notes of the memory itself. We don't use any third-party advertising SDK, and this data is never used to track you across other companies' apps or websites.</p>
+
+      <h3>Other information</h3>
+      <ul>
+        <li><strong>Onboarding answers</strong> — if you answer the optional questions during setup (like what brought you to Bindle), we store your answers against your account to personalize your experience and understand our users in aggregate.</li>
+        <li><strong>Age confirmation</strong> — Bindle is intended for adults. During sign-up you confirm you're 18 or older, and we record that a confirmation was made and when. We don't ask for or store your birthdate.</li>
+      </ul>
+    </div>
+
+    <div class="privacy-section">
+      <h2>What we don't collect</h2>
+      <p>We don't access your Contacts, location, health or fitness data, financial information, browsing or search history, or any of Apple's designated "sensitive" categories (such as race, religion, or sexual orientation). We don't run crash or performance analytics tools, and we don't use any advertising or data-broker SDKs.</p>
+    </div>
+
+    <div class="privacy-section">
+      <h2>Shared vaults</h2>
+      <p>If you invite someone to a shared vault, they'll see your display name. If you invite them by email, we use that email address to deliver the invitation. Memories contributed by collaborators to a shared vault are their own — if the vault owner's account is deleted, collaborators keep what they contributed and are notified.</p>
+    </div>
+
+    <div class="privacy-section">
+      <h2>Who we share information with</h2>
+      <p>We don't sell your information, and we don't share it with advertisers or data brokers. We use a small number of service providers to run Bindle, each acting on our behalf:</p>
+      <ul>
+        <li><strong>Apple</strong> — Sign in with Apple (authentication), iCloud/CloudKit (storing your memory files in your own private database), and Apple's push notification service (delivering notifications to your device).</li>
+        <li><strong>Google (Firebase)</strong> — authentication, our database (Cloud Firestore), file storage for non-memory data, server functions, push-notification delivery, and app-integrity verification (App Check).</li>
+      </ul>
+      <p>These providers process data only as needed to provide their service to us and are bound by their own privacy terms.</p>
+    </div>
+
+    <div class="privacy-section">
+      <h2>How long we keep your information, and how to delete it</h2>
+      <p><strong>Deleting a memory:</strong> when you delete a memory inside Bindle, it's held for 30 days (so you can recover it if it was a mistake), then permanently and automatically erased.</p>
+      <p><strong>Deleting your account:</strong> account deletion in Bindle is immediate and permanent — there is no recovery window. When you delete your account, we erase your account data from our servers right away, disconnect your Apple ID, and your device removes its copy of your memories, including the copies kept in your own iCloud. If you share a vault with others, collaborators keep what they contributed and are notified that the vault owner's account was deleted.</p>
+      <p>Because your memory files live in your own iCloud rather than on our servers, you're always in control of that copy directly — you can remove it at any time from your device or from Settings → your name → iCloud on your iPhone.</p>
+    </div>
+
+    <div class="privacy-section">
+      <h2>Children's privacy</h2>
+      <p>Bindle is intended for adults and requires you to confirm you're 18 or older to create an account. We do not knowingly collect information from children, and if we learn that we have, we'll delete it.</p>
+    </div>
+
+    <div class="privacy-section">
+      <h2>Your choices and rights</h2>
+      <ul>
+        <li>You can review and edit your account details from within the app.</li>
+        <li>You can delete individual memories or your entire account at any time from Settings inside the app.</li>
+        <li>You can control notification permissions from your device's Settings.</li>
+        <li>Depending on where you live, you may have additional rights over your personal information — such as the right to access, correct, or request a copy of it. Contact us at <a href="mailto:support@heybindle.com" style="color: var(--accent); text-decoration: underline;">support@heybindle.com</a> and we'll help.</li>
+      </ul>
+    </div>
+
+    <div class="privacy-section">
+      <h2>Security</h2>
+      <p>We use industry-standard safeguards to protect the information described in this policy, including encryption in transit and access controls on our systems. No method of transmission or storage is perfectly secure, but protecting your information is something we take seriously.</p>
+    </div>
+
+    <div class="privacy-section">
+      <h2>Changes to this policy</h2>
+      <p>If we make a change that affects what we collect or how we use it, we'll update this page and the date at the top before it takes effect.</p>
+    </div>
+
+    <div class="privacy-contact">
+      <h2>Questions?</h2>
+      <p>If anything here is unclear, get in touch — we respond personally.</p>
+      <a href="mailto:support@heybindle.com" class="contact-link">support@heybindle.com</a>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════
+     FOOTER
+══════════════════════════════════════ -->
+<footer>
+  <div class="footer-brand">
+    <img class="footer-mark" src="../img/bindle-mark.png" width="26" height="26" alt="" aria-hidden="true" />
+    <span class="footer-name">bindle</span>
+  </div>
+  <p class="footer-copy">© 2026 Bolt Interactive, LLC.</p>
+</footer>
+
+<script src="../script.js"></script>
+</body>
+</html>
