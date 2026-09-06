@@ -99,9 +99,10 @@ a { text-decoration: none; color: inherit; }
   font-weight: 300;
 }
 
-.waitlist-confirmed-brand svg {
+.waitlist-confirmed-brand img {
   width: 34px;
-  height: 17px;
+  height: 34px;
+  border-radius: 10px;
 }
 
 .waitlist-confirmed-card {
@@ -188,7 +189,6 @@ a { text-decoration: none; color: inherit; }
 
 /* over a light section — flip text to dark, still no background fill */
 .site-nav.light-bg .nav-wordmark { color: var(--text-dark); }
-.site-nav.light-bg .nav-inf path  { stroke: var(--accent); }
 .site-nav.light-bg .nav-cta {
   background: var(--accent);
   color: #fff;
@@ -203,7 +203,7 @@ a { text-decoration: none; color: inherit; }
 
 .nav-brand:hover { opacity: .75; }
 
-.nav-inf { width: 34px; height: 17px; }
+.nav-mark { width: 30px; height: 30px; border-radius: 9px; display: block; }
 
 .nav-wordmark {
   font-family: var(--serif);
@@ -1555,6 +1555,13 @@ footer {
   margin-bottom: .75rem;
 }
 
+.footer-mark {
+  width: 26px;
+  height: 26px;
+  border-radius: 8px;
+  display: block;
+}
+
 .footer-name {
   font-family: var(--serif);
   font-weight: 300;
@@ -1701,7 +1708,7 @@ footer {
 
 /* ════════════════════════════════════════
    LANDING PAGE REFRESH
-   The refresh preserves Tether's existing type and color system while
+   The refresh preserves Bindle's existing type and color system while
    widening the primary grid and adding clearer product-led sections.
 ════════════════════════════════════════ */
 .container {
@@ -2540,7 +2547,7 @@ footer {
   position: relative;
   z-index: 1;
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   align-items: stretch;
   gap: 1rem;
 
@@ -2912,7 +2919,7 @@ footer {
 
 }
 
-.tether-waitlist-form {
+.bindle-waitlist-form {
 
   width: min(100%, 600px);
 
@@ -2926,7 +2933,7 @@ footer {
 
 }
 
-.tether-waitlist-form input[type='email'] {
+.bindle-waitlist-form input[type='email'] {
 
   width: 100%;
   min-width: 0;
@@ -2941,20 +2948,20 @@ footer {
 
 }
 
-.tether-waitlist-form input[type='email']::placeholder {
+.bindle-waitlist-form input[type='email']::placeholder {
 
   color: rgba(240, 235, 239, .5);
 
 }
 
-.tether-waitlist-form input[type='email']:focus {
+.bindle-waitlist-form input[type='email']:focus {
 
   border-color: var(--accent);
   box-shadow: 0 0 0 3px rgba(192, 92, 48, .18);
 
 }
 
-.tether-waitlist-form button[type='submit'] {
+.bindle-waitlist-form button[type='submit'] {
 
   display: inline-flex;
   min-height: 100%;
@@ -3012,7 +3019,7 @@ footer {
 
 }
 
-.tether-waitlist-form button[type='submit'][disabled] {
+.bindle-waitlist-form button[type='submit'][disabled] {
 
   cursor: wait;
   opacity: .8;
@@ -3287,7 +3294,7 @@ footer {
 
   }
 
-  .tether-waitlist-form button[type='submit'] {
+  .bindle-waitlist-form button[type='submit'] {
 
     width: 100%;
     justify-content: center;
@@ -3422,7 +3429,7 @@ footer {
 
   .pricing-card:last-child {
 
-    grid-column: 1 / -1;
+    grid-column: auto;
 
   }
 
@@ -3537,10 +3544,10 @@ footer {
 
   }
 
-  .nav-inf {
+  .nav-mark {
 
-    width: 29px;
-    height: 15px;
+    width: 26px;
+    height: 26px;
 
   }
 
@@ -3942,7 +3949,7 @@ footer {
   }
 
   .closing-action,
-  .tether-waitlist-form {
+  .bindle-waitlist-form {
 
     width: 100%;
 
@@ -3975,7 +3982,7 @@ footer {
 
 .pricing-grid {
 
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   grid-auto-rows: 1fr;
   gap: var(--pricing-space-2);
 

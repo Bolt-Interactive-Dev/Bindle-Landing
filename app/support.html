@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Support — Bindle</title>
+  <meta name="description" content="Get help with the Bindle app — email support@heybindle.com." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../img/favicon-180.png" />
+  <style>
+
+    .support-page {
+      min-height: 100svh;
+      background:
+        radial-gradient(ellipse 85% 70% at 15% 5%, rgba(192, 92, 48, 0.3), transparent 58%),
+        radial-gradient(ellipse 65% 55% at 85% 100%, rgba(120, 40, 20, 0.2), transparent 65%),
+        var(--dark);
+      color: var(--text-light);
+      display: grid;
+      place-items: center;
+      padding: 2rem;
+    }
+
+    .support-card {
+      max-width: 440px;
+      text-align: center;
+    }
+
+    .support-brand {
+      display: inline-flex;
+      align-items: center;
+      gap: .55rem;
+      text-decoration: none;
+      margin-bottom: 2.6rem;
+    }
+
+    .support-brand img {
+      width: 32px;
+      height: 32px;
+      border-radius: 9px;
+      display: block;
+    }
+
+    .support-brand span {
+      font-family: var(--serif);
+      font-weight: 300;
+      font-size: 1.3rem;
+      color: var(--text-light);
+    }
+
+    .support-eyebrow {
+      font-family: var(--sans);
+      font-size: .72rem;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 0 0 .9rem;
+    }
+
+    .support-card h1 {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: clamp(2rem, 6vw, 2.6rem);
+      margin: 0 0 1rem;
+      line-height: 1.15;
+    }
+
+    .support-card p.sub {
+      font-family: var(--sans);
+      font-size: .97rem;
+      color: var(--text-dim);
+      line-height: 1.7;
+      margin: 0 0 2.2rem;
+    }
+
+    .support-footer {
+      margin-top: 3rem;
+      font-size: .74rem;
+      color: var(--text-muted);
+      opacity: .6;
+    }
+
+  </style>
+</head>
+<body>
+
+<div class="support-page">
+  <div class="support-card">
+    <a class="support-brand" href="../index.html">
+      <img src="../img/bindle-mark@2x.png" alt="" aria-hidden="true" />
+      <span>bindle</span>
+    </a>
+    <p class="support-eyebrow">Support</p>
+    <h1>Need a hand?</h1>
+    <p class="sub">For anything about the Bindle app — bugs, billing, questions, feedback — email us directly. We respond personally.</p>
+    <a class="btn-cta" href="mailto:support@heybindle.com">support@heybindle.com</a>
+    <p class="support-footer">© 2026 Bolt Interactive, LLC.</p>
+  </div>
+</div>
+
+</body>
+</html>
