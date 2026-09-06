@@ -1,11 +1,2 @@
-# Invite links are minted as https://heybindle.com/invite/<token>.
-#
-# The destination is deliberately NOT named invite.html. A file at that name claims the
-# /invite asset route, and Pages' asset normalization then 308-redirects /invite/<token>
-# down to /invite — stripping the token before the page can read it. Verified live
-# 2026-09-06. Keeping the name off the /invite prefix leaves the rewrite unshadowed.
-#
-# Status 200 rewrites rather than redirects, so the token stays in the address bar for
-# the page script to read off the path.
-/invite/* /vault-invite.html 200
-/invite /vault-invite.html 200
+# /invite/* is handled by functions/invite/[[path]].js, not here. A `... 200` rule in this
+# file is downgraded by Pages to a 308 redirect, which strips the token off the path.
