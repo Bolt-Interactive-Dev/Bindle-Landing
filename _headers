@@ -1,0 +1,5 @@
+# Apple requires the AASA file to be served as application/json. Cloudflare Pages
+# would otherwise guess a type from the extensionless filename and iOS would reject it.
+/.well-known/apple-app-site-association
+  Content-Type: application/json
+  Cache-Control: public, max-age=3600

@@ -1,0 +1,15 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["2GSG4JWKV8.com.boltinteractive.memoryapp"],
+        "components": [
+          {
+            "/": "/invite/*",
+            "comment": "Vault invite links open the Bindle app when it is installed"
+          }
+        ]
+      }
+    ]
+  }
+}
