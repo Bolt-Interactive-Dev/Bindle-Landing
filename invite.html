@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>You're invited to a Bindle vault</title>
+  <meta name="description" content="Someone shared a private Bindle vault with you. Open it in the app, or get Bindle to join." />
+  <meta name="robots" content="noindex" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon-180.png" />
+  <style>
+
+    [hidden] {
+      display: none !important;
+    }
+
+    .invite-page {
+      min-height: 100svh;
+      background:
+        radial-gradient(ellipse 85% 70% at 15% 5%, rgba(192, 92, 48, 0.3), transparent 58%),
+        radial-gradient(ellipse 65% 55% at 85% 100%, rgba(120, 40, 20, 0.2), transparent 65%),
+        var(--dark);
+      color: var(--text-light);
+      display: grid;
+      place-items: center;
+      padding: 2rem;
+    }
+
+    .invite-card {
+      max-width: 460px;
+      text-align: center;
+    }
+
+    .invite-brand {
+      display: inline-flex;
+      align-items: center;
+      gap: .55rem;
+      text-decoration: none;
+      margin-bottom: 2.6rem;
+    }
+
+    .invite-brand img {
+      width: 32px;
+      height: 32px;
+      border-radius: 9px;
+      display: block;
+    }
+
+    .invite-brand span {
+      font-family: var(--serif);
+      font-weight: 300;
+      font-size: 1.3rem;
+      color: var(--text-light);
+    }
+
+    .invite-eyebrow {
+      font-family: var(--sans);
+      font-size: .72rem;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 0 0 .9rem;
+    }
+
+    .invite-card h1 {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: clamp(2rem, 6vw, 2.6rem);
+      margin: 0 0 1rem;
+      line-height: 1.15;
+    }
+
+    .invite-card p.sub {
+      font-family: var(--sans);
+      font-size: .97rem;
+      color: var(--text-dim);
+      line-height: 1.7;
+      margin: 0 0 2.2rem;
+    }
+
+    /* Stack the two CTAs with a little air; the secondary reads as a quiet alternative. */
+    .invite-actions {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: .85rem;
+    }
+
+    .invite-secondary {
+      font-family: var(--sans);
+      font-size: .9rem;
+      font-weight: 500;
+      color: var(--text-dim);
+      text-decoration: none;
+      border-bottom: 1px solid var(--border-dark);
+      padding-bottom: 2px;
+      transition: color .3s var(--ease);
+    }
+
+    .invite-secondary:hover {
+      color: var(--text-light);
+    }
+
+    .invite-note {
+      font-family: var(--sans);
+      font-size: .78rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin: 2rem 0 0;
+    }
+
+    .invite-footer {
+      margin-top: 3rem;
+      font-size: .74rem;
+      color: var(--text-muted);
+      opacity: .6;
+    }
+
+  </style>
+</head>
+<body>
+
+<div class="invite-page">
+  <div class="invite-card">
+    <a class="invite-brand" href="/">
+      <img src="/img/bindle-mark@2x.png" alt="" aria-hidden="true" />
+      <span>bindle</span>
+    </a>
+    <p class="invite-eyebrow">Vault invitation</p>
+    <h1>You've been invited to a shared vault</h1>
+    <p class="sub">Bindle keeps a family's photos, videos, and documents together in one private space. Open your invitation in the app, or get Bindle first and come back to this link.</p>
+
+    <div class="invite-actions">
+      <a id="OpenButton" class="btn-cta" href="#" hidden>Open in Bindle</a>
+      <a id="GetButton" class="btn-cta" href="/#waitlist">Get Bindle</a>
+      <a id="SecondaryLink" class="invite-secondary" href="/" hidden>What is Bindle?</a>
+    </div>
+
+    <p id="InviteNote" class="invite-note">Once you have Bindle installed, tapping this link on your iPhone opens the invitation automatically.</p>
+
+    <p class="invite-footer">© 2026 Bolt Interactive, LLC.</p>
+  </div>
+</div>
+
+<script>
+
+  /*
+    Invite links are minted as https://heybindle.com/invite/<token> and rewritten here by
+    _redirects with status 200, so the original path — token included — is still on
+    window.location. Read the token from there rather than from a query string.
+  */
+  var PathSegments = window.location.pathname.split("/").filter(Boolean);
+  var InviteToken = (PathSegments[0] === "invite" && PathSegments[1]) ? PathSegments[1] : "";
+
+  var OpenButton = document.getElementById("OpenButton");
+  var GetButton = document.getElementById("GetButton");
+  var SecondaryLink = document.getElementById("SecondaryLink");
+  var InviteNote = document.getElementById("InviteNote");
+
+  /*
+    Only offer the custom-scheme handoff on iOS. Everywhere else bindle:// resolves to
+    nothing and the tap produces a browser error dialog, which reads as a broken link.
+    We deliberately never fire the scheme automatically for the same reason: a visitor
+    without the app installed would get that dialog before reading a word of the page.
+  */
+  var IsAppleMobile = /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+    (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+
+  if (InviteToken && IsAppleMobile) {
+
+    OpenButton.href = "bindle://invite?token=" + encodeURIComponent(InviteToken); // Custom-scheme fallback for builds without Associated Domains
+    OpenButton.hidden = false;
+
+    GetButton.classList.remove("btn-cta"); // Demote the download CTA so "Open in Bindle" is the single primary action
+    GetButton.className = "invite-secondary";
+    GetButton.textContent = "Don't have Bindle yet?";
+
+  } else if (!InviteToken) {
+
+    // Someone reached /invite with no token at all — nothing to open, so explain rather than dangle a dead button.
+    InviteNote.textContent = "This link is missing its invitation code. Ask whoever invited you to send it again.";
+    SecondaryLink.hidden = false;
+
+  }
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,5 @@
+# Invite links are minted as https://heybindle.com/invite/<token>. iOS opens them in the
+# app once Associated Domains ships; everyone else lands on the invite page below.
+# Status 200 rewrites rather than redirects, so the token stays in the address bar for
+# the page script to read.
+/invite/* /invite.html 200
