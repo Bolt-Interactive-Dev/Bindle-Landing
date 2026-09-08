@@ -1,3 +1,11 @@
+/*
+  Content-Security-Policy: default-src 'self'; script-src 'self' https://challenges.cloudflare.com 'sha256-aYjflo+aarC3eIUn4YB82SwlBbSRyGqyDAdX0VV0UWc=' 'sha256-XYmn/J3/wLTPrGSMBHBd0ooq4eIyxwgxZDq7sqewQN0='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://challenges.cloudflare.com; frame-src https://challenges.cloudflare.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=()
+
 # Apple requires the AASA file to be served as application/json. Cloudflare Pages
 # would otherwise guess a type from the extensionless filename and iOS would reject it.
 /.well-known/apple-app-site-association
