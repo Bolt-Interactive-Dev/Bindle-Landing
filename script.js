@@ -17,7 +17,7 @@ const IsTouch   = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
 const Nav        = document.querySelector('.site-nav');
 const Scrim      = document.querySelector('.top-scrim');
 const ProgressBar = document.querySelector('.scroll-progress');
-const AllSections = document.querySelectorAll('.light-section, .cream-section, .dark-section, .hero, footer');
+const AllSections = document.querySelectorAll('.light-section, .cream-section, .tan-section, .dark-section, .hero, footer');
 const PhoneWraps  = document.querySelectorAll('.phone-wrap');
 
 let ScrollY       = 0;
@@ -35,8 +35,8 @@ function RunScrollWork() {
   /* -- progress bar -- */
   if (ProgressBar) {
     const DocH     = document.documentElement.scrollHeight - window.innerHeight;
-    const Progress = DocH > 0 ? (ScrollY / DocH) * 100 : 0;
-    ProgressBar.style.width = Progress + '%';
+    const Progress = DocH > 0 ? (ScrollY / DocH) : 0;
+    ProgressBar.style.transform = `scaleX(${Progress})`;
   }
 
   /* -- nav / scrim colour (pixel-precise, uses cached nav height) -- */
@@ -48,7 +48,7 @@ function RunScrollWork() {
       const T = Section.getBoundingClientRect().top;
       const B = T + Section.offsetHeight;
       if (SampleY >= T && SampleY <= B) {
-        IsLight = Section.classList.contains('light-section') || Section.classList.contains('cream-section');
+        IsLight = Section.classList.contains('light-section') || Section.classList.contains('cream-section') || Section.classList.contains('tan-section');
       }
     });
 
